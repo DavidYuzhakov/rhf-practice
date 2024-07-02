@@ -1,0 +1,85 @@
+input {
+  outline: none;
+  border: none;
+  border-bottom: 2px solid #7ab9b1;
+  padding: 10px 5px;
+  margin-bottom: 25px;
+  width: 100%;
+  color: #333;
+}
+
+input::placeholder {
+  text-transform: capitalize;
+  color: #838486;
+}
+
+.checkbox {
+  position: relative;
+  margin-bottom: 25px;
+}
+
+input[type=checkbox] {
+  display: none;
+}
+
+input[type=checkbox] + label:before {
+  content: "";
+  display: inline-block;
+  width: 13px;
+  height: 13px;
+
+  position: absolute;
+  top: 1.5px;
+  left: 0;
+  
+  border: 1px solid #476893;
+  border-radius: 1px;
+  cursor: pointer;
+  transition: background-color .3s ease;
+}
+
+input[type=checkbox] + label {
+  padding-left: 23px;
+
+  line-height: 1px;
+  cursor: pointer;
+  color: #737077;
+  font-size: 13px;
+}
+
+input[type=checkbox] + label.error:before {
+  border: 1px solid #bf1650;
+}
+
+
+input[type=checkbox] + label:after {
+  content: "";
+  position: absolute;
+  top: 4px;
+  left: 3px;
+  z-index: 1;
+
+  background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/White_check.svg/2048px-White_check.svg.png');
+  background-repeat: no-repeat;
+  background-size: 10px 10px;
+
+  display:block;
+  width: 12px; 
+  height: 12px;
+
+  transition: all .3s ease;
+}
+
+input[type=checkbox]:checked + label:before {
+  background-color: #476893;
+}
+
+p {
+  color: #bf1650;
+  font-size: 13px;
+}
+
+p::before {
+  display: inline;
+  content: "⚠ ";
+}
